@@ -2,11 +2,27 @@
 var holdon = new Audio('holdon.wav');
 var coon = new Audio('racoon.wav');
 var dead = new Audio('dead.wav');
+var grid;
 
 
 
-adventure.movAbe();
-adventure.target();
+var adventure;
+
+    function setUp() {
+        console.log("hello");
+        grid = new Grid(9, 9);
+        grid.makeTable();
+        adventure = new Adventure(0,0,8,8,8);
+        adventure.movAbe();
+        adventure.target();
+};
+// function name() {
+//     var xcoord = prompt("enter how many rows you want");
+//     var ycoord = prompt("enter how many columes you want")
+//     grid = new Grid(xcoord, ycoord);
+    
+// };
+
 
 function mov(xDel, yDel, x, y, bound) {
 	
