@@ -28,3 +28,16 @@ Adventure.prototype.hideAbe = function (xChange, yChange) {
 };
 
 var adventure = new Adventure(0,0,8,8,8);
+
+function makeTable(rows, cols){
+  	document.write('<table class="burns">');
+  		for (var i = 0; i < rows; i++) {
+    		document.write('<tr>'); 
+      			for (var j = 0; j < cols; j++){
+        			document.write('<td class="cell" id="' + i.toString() + j.toString() + '"></td>');
+      			};
+    		document.write('</tr>');
+   		 };
+  	document.write('</table>');
+}
+makeTable(9,9);	
