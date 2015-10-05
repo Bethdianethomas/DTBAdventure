@@ -1,12 +1,13 @@
 
+
 /////////////////////////////////Make and move Abe//////////////////////////////////
 
 function Adventure(xCoord, yCoord, endX, endY, bound) {
+	this.begin = new Thing(xCoord, yCoord);
 	this.coord = new Thing(xCoord, yCoord);
 	this.end = new Thing(endX, endY);
-	// this.xCoord = xCoord;
-	// this.yCoord = yCoord;
 	this.bound = bound;
+	
 };
 
 Adventure.prototype.killAbe = function () {
@@ -25,31 +26,10 @@ Adventure.prototype.movAbe = function(){
 };
 
 Adventure.prototype.hideAbe = function (xChange, yChange) {
-	document.getElementById(this.coord.x + xChange).toString() + (this.coord.y + yChange).toString()).innerHTML = "";
+	document.getElementById((this.coord.x 
+		+ xChange).toString() + (this.coord.y + yChange).toString()).innerHTML = "";
 };
 
-// Adventure.prototype.movBad = function() {
-// 	document.getElementById(this.yCoord.toString() + 
-// 		this.xCoord.toString()).innerHTML = "<img src='small_abe.png' class='img'></img>";
-// };
-///////////////////////////////////////Move Bad Guy//////////////////////////////////////////
-
-// function BadAss(yCoord, xCoord, endX, endY, bound){
-// 	this.yCoord = yCoord;
-// 	this.xCoord = xCoord;
-	// this.endX = endX;
-	// this.endY = endY;
-// 	this.bound = bound;
-// };
-
-// BadAss.prototype.movBad = function() {
-// 	document.getElementById(this.yCoord.toString() + 
-// 		this.xCoord.toString()).innerHTML = "<img src='small_abe.png' class='img'></img>";
-// };
-
-// }
-
-///////////////////////////////////Gird set up///////////////////////////////////////////////
 
 
 function Grid(rows,cols) {
@@ -70,16 +50,22 @@ function Grid(rows,cols) {
 
 
 
-//////////////////////////thing///////////////////////////////////
 
-function Thing(x, y) {
+function Thing(x, y, name) {
 	this.x = x;
 	this.y = y;
+	this.name = name;
+	this.superPower = function(){
+		document.getElementById(this.x.toString() + this.y.toString()).innerHTML = "<img id='portal'src='https://lh5.ggpht.com/uOc3iqkehwJddeJ1d1HtaAQdSAVaViqPydyRfDFN8GGU9zrTkxKA5x7YDJ_3fkJSZA=w300'></img>";
+		console.log(this.x.toString() + this.y.toString());
+		
 
-
-
+		
+	}
 	
-}
+};
+
+
 
 
 
