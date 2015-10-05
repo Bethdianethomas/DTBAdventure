@@ -4,6 +4,7 @@ var coon = new Audio('racoon.wav');
 var dead = new Audio('dead.wav');
 var gridAbe;
 var adventure;
+var abePosition;
 // var thing = new Thing(9,9);
 
 
@@ -13,6 +14,7 @@ function setUp() {
         gridAbe = new Grid(9, 9);
         gridAbe.makeTable();
         adventure = new Adventure(0,0,8,8,8);
+        abePosition = adventure.coord;
         adventure.movAbe();
         adventure.target();
         portal = new Thing(5,5);
@@ -29,7 +31,8 @@ function mov(xDel, yDel, x, y, bound) {
 	if(atEnd(xDel, yDel)) {
         adventure.coord.x += x;
         adventure.coord.y += y;
-        adventure.hideAbe(xDel, yDel);	
+        blackHole();
+        adventure.hideAbe(xDel, yDel);
         adventure.killAbe();
         dead.play();
         alert("Whuuthaa!!??");
@@ -41,12 +44,14 @@ function mov(xDel, yDel, x, y, bound) {
     else if (adventure.coord.x === bound && xDel !== 0) {
         coon.play();
         alert("D'oh!!!");
+
     }
     else {
         adventure.coord.x += x;
         adventure.coord.y += y;
         console.log("mov: " + adventure.coord.x + adventure.coord.y);
         adventure.movAbe();
+        blackHole();
         adventure.hideAbe(xDel, yDel);
 	};
 }

@@ -59,14 +59,16 @@ function Thing(x, y, name) {
 		document.getElementById(this.x.toString() + this.y.toString()).innerHTML = "<img id='portal'src='https://lh5.ggpht.com/uOc3iqkehwJddeJ1d1HtaAQdSAVaViqPydyRfDFN8GGU9zrTkxKA5x7YDJ_3fkJSZA=w300'></img>";
 		console.log(this.x.toString() + this.y.toString());
 		
-
-		
 	}
 	
 };
 
 
-
+function blackHole(){
+	if ( (abePosition.x.toString() + abePosition.y.toString() ) === (portal.x.toString() + portal.y.toString() )) {
+		console.log("hell");
+	}
+};
 
 
 
